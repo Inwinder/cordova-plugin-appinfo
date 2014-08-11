@@ -6,13 +6,19 @@
 {
     NSDictionary *appInfoDict = NSBundle.mainBundle.infoDictionary;
     
+    NSString *appMode = @"Debug";
+    #if RELEASE
+      appMode = @"Release";
+    #endif
+    
     NSString *identifier = appInfoDict[@"CFBundleIdentifier"];
     NSString *version = appInfoDict[@"CFBundleShortVersionString"];
     NSString *build = appInfoDict[@"CFBundleVersion"];
     
     NSDictionary *appInfo = @{@"identifier": identifier,
                               @"version": version,
-                              @"build": build};
+                              @"build": build,
+                              @"appMode": appMode};
     
     CDVPluginResult* pluginResult = nil;
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:appInfo];
