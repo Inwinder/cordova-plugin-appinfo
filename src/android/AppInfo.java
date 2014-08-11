@@ -1,4 +1,4 @@
-package com.yezhiming.cordova.appinfo;
+package com.alertsense.appinfo;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
